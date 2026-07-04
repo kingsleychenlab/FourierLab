@@ -45,6 +45,12 @@ __all__ = [
 _FIGSIZE = (9.0, 5.0)
 
 
+# Deterministic, non-identifying PNG metadata. Overriding the defaults keeps
+# saved figures reproducible and free of any environment-derived information
+# (matplotlib version strings, timestamps, etc.).
+_PNG_METADATA = {"Software": "FourierLab"}
+
+
 def save_figure(fig: "plt.Figure", save: str | Path | None) -> "plt.Figure":
     """Tidy layout and, if ``save`` is given, write the figure to disk."""
     fig.tight_layout()
@@ -52,7 +58,8 @@ def save_figure(fig: "plt.Figure", save: str | Path | None) -> "plt.Figure":
         path = Path(save)
         if path.parent and not path.parent.exists():
             path.parent.mkdir(parents=True, exist_ok=True)
-        fig.savefig(path, dpi=120, bbox_inches="tight")
+        metadata = _PNG_METADATA if path.suffix.lower() == ".png" else None
+        fig.savefig(path, dpi=120, bbox_inches="tight", metadata=metadata)
     return fig
 
 
