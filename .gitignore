@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.cache/
+
+# Generated plots and exported signals (keep the tracked sample only)
+*.png
+*.jpg
+*.jpeg
+*.wav
+/filtered.csv
+/spectrum.csv
+/*.png
+
+# Keep the curated sample data set
+!data/sample_signal.csv
+!examples/*.png
+
+# Editor / OS noise
+.idea/
+.vscode/
+.DS_Store
+*.swp

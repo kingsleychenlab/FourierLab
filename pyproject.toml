@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fourierlab"
+version = "0.1.0"
+description = "A computational mathematics toolkit for Fourier series, DFT, FFT, spectrum analysis, and frequency-domain filtering."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "FourierLab contributors" }]
+keywords = [
+    "fourier",
+    "dft",
+    "fft",
+    "signal-processing",
+    "spectrum",
+    "numerical-methods",
+    "education",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.22",
+    "matplotlib>=3.5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/yourname/FourierLab"
+Repository = "https://github.com/yourname/FourierLab"
+
+[project.scripts]
+fourierlab = "fourierlab.cli:main"
+
+[tool.setuptools]
+packages = ["fourierlab"]
+
+[tool.setuptools.package-data]
+fourierlab = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = ["ignore::DeprecationWarning"]

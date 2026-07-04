@@ -1,0 +1,8 @@
+# Core runtime dependencies for FourierLab.
+# The DFT and FFT are implemented from scratch; NumPy is used only for
+# array storage / vectorized arithmetic and (in tests) as a reference oracle.
+numpy>=1.22
+matplotlib>=3.5
+
+# Testing
+pytest>=7.0
