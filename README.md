@@ -507,7 +507,7 @@ X_3 &= E_1 - W_4^1 O_1 = 2 - 0 = 2
 $$
 
 Identical to the DFT, as it must be. The **inverse FFT** reuses the forward
-transform via $\operatorname{ifft}(X) = \tfrac{1}{N}\,\overline{\operatorname{fft}(\overline{X})}$.
+transform via $\text{ifft}(X) = \tfrac{1}{N}\,\overline{\text{fft}(\overline{X})}$.
 
 **Why it's faster.** The recursion has $\log_2 N$ levels, each doing `O(N)` work:
 
@@ -575,7 +575,7 @@ and adding more terms only makes the overshoot **thinner**, never shorter.
 For the unit square wave the peak converges to a specific constant:
 
 $$
-\frac{2}{\pi}\int_0^{\pi}\frac{\sin t}{t}\,dt = \frac{2}{\pi}\operatorname{Si}(\pi) \approx 1.1790,
+\frac{2}{\pi}\int_0^{\pi}\frac{\sin t}{t}\,dt = \frac{2}{\pi}\,\text{Si}(\pi) \approx 1.1790,
 $$
 
 an overshoot of about **9% of the jump** that persists forever. This is not a bug
